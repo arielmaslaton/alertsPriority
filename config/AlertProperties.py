@@ -16,6 +16,14 @@ class AlertPriority:
                     'employees login credentials',
                 ],
             },
+            {
+                'alert_type': 'AttackIndication',
+                'alert_subtype': 'BotDataForSale',
+                'title_identifiers': [
+                    'A bot sssserver with credentials for a company',
+                    'employeessa login credentials',
+                ],
+            },
         ],
         2: [
             {
