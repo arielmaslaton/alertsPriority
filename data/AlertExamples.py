@@ -10,8 +10,8 @@ alerts = [
     },
     {
         '_id': '000000003',
-        'Title': 'A company\'s confidential document was exposed publicly',
-        'FoundDate': '2018-01-01T20:01:28.344Z',
+        'Title': 'A coampany\'s confidential document was exposed publicly',
+        'FoundDate': '2020-01-01T20:01:28.344Z',
         'Details': {
             'Type': 'DataLeakage',
             'SubType': 'ConfidentialDocumentLeakage',
@@ -23,7 +23,7 @@ alerts = [
         'FoundDate': '2018-01-01T20:01:26.344Z',
         'Details': {
             'Type': 'DataLeakage',
-            'SubType': 'ConfidentialDocumentLeakage',
+            'SubType': 'ConfidentaialDocumentLeakage',
         },
     },
     {
@@ -37,7 +37,7 @@ alerts = [
     },
     {
         '_id': '000000002',
-        'Title': 'A bot server with credentials for a company',
+        'Title': 'A bot server with credentials for a company A',
         'FoundDate': '2019-01-02T20:02:45.344Z',
         'Details': {
             'Type': 'AttackIndication',

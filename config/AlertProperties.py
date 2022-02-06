@@ -12,7 +12,7 @@ class AlertPriority:
                 'alert_type': 'AttackIndication',
                 'alert_subtype': 'BotDataForSale',
                 'title_identifiers': [
-                    'A bot server with credentials for a company',
+                    'A bot server with credentials for a company R',
                     'employees login credentials',
                 ],
             },

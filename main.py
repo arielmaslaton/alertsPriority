@@ -7,7 +7,6 @@ import operator
 import SerachPatternAlgorithm
 
 configCherryPickNum = 4
-priorityConfig = {}
 topPriorityAlerts = []
 priorityLevelsMatchingAlerts = [dict() for num in range(len(AlertPriority.templates))]
 
@@ -27,19 +26,23 @@ def get_alert_timestamp(alert):
     return time.mktime(parsed_time.timetuple()) + parsed_time.microsecond / 1e6
 
 
-def types_match(alert_type, alert_subtype, rule):
-    if rule['alert_type'] == alert_type and rule['alert_subtype'] == alert_subtype:
+def types_match(in_alert, rule):
+    # Comparing type and subtype
+    if rule['alert_type'] == in_alert['Details']['Type'] \
+            and rule['alert_subtype'] == in_alert['Details']['SubType']:
         return True
 
     return False
 
 
 def find_match(in_alert):
+    # Iterating the alert over priority map,
+    # And if titles match we send for types match and return a priority # on full match
     for priority in AlertPriority.templates.items():
         for rule in priority[1]:
             for title in rule['title_identifiers']:
                 if SerachPatternAlgorithm.KMPSearch(title, in_alert['Title']) \
-                        and types_match(in_alert['Details']['Type'], in_alert['Details']['SubType'], rule):
+                        and types_match(in_alert, rule):
                     return priority[0]
     return -1
 
@@ -47,9 +50,9 @@ def find_match(in_alert):
 def find_full_matches(incoming_alerts):
     """
     This function iterate over incoming alerts and match it against the priority config
-    1. We iterate each alert over the priority level config for top priority to lowest
-    2. We try to find a matching title
-    3. If found then we compare subtype and type
+    1. We iterate each alert over the priority level config from top priority to lowest
+    2. First we try to find a matching title
+    3. If found then we compare subtype and type (if not found we continue with same alert to the next priority rule)
     4. If a full match is found we insert the alert ID and timestamp into the matching alerts map.
     :param incoming_alerts:
     :return:
