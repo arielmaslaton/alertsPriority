@@ -1,5 +1,5 @@
-from AlertProperties import AlertPriority
-from AlertExamples import alerts
+from config.AlertProperties import AlertPriority
+from data.AlertExamples import alerts
 
 import ciso8601
 import time
