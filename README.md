@@ -38,7 +38,7 @@ After preparing the new priority rule map, the algorithm iterates over the new p
 
 The match is done first to 'type' and 'subtype',then try to match the titles.
 
-Since a title identifier could be a subset of an alert identifier a Knuth–Morris–Pratt algorithm was used to find a match.
+Since a title identifier could be a subset of an alert identifier, a Knuth–Morris–Pratt algorithm was used to find a match.
 Boyer-Moore algorithm or suffix tree was considered as well but for our purpose Knuth–Morris–Pratt algorithm seems to be the most efficient in terms of speed and complexity - O(n)
 
 After a full match is done, the results: Alert Priority Level, Alert ID, and alert timestamp are set in a list.
