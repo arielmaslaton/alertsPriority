@@ -34,7 +34,7 @@ the value is: priority number
 meaning it inserts all the titles and thier priority number,
 that are connected to this type and subtype as key:value pairs 
 
-It iterates over the new priority rules map, and try to find a match.
+After preparing the new priority rule map, the algorithm iterates over the new priority rules map, and try to find a match.
 
 The match is done first to 'type' and 'subtype',then try to match the titles.
 
