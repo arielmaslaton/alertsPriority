@@ -17,7 +17,7 @@ Beside the main file, in the project you will find the following files:
 
 'SearchPatternAlgorithm.py' - a search algorithm used to find patter within a given txt
 
-## Getting Started
+## Detailed Description
 My approach taken is as follows:
 
 First, the algorithm first takes the alerts priority rule map and prepare a new priority rule map called 'newPriorityConfig'
