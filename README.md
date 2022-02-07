@@ -20,9 +20,21 @@ Beside the main file, in the project you will find the following files:
 ## Getting Started
 My approach taken is as follows:
 
-First, the algorithem iterate over the alerts file, and for each alert:
+First, the algorithm first takes the alerts priority rule map and prepare a new priority rule map called 'newPriorityConfig'
 
-It iterates over the priority rules map, from the highest priority to the lowest and try to find a match.
+The newPriorityConfig is a dictionary where:
+the key is: 'type_subtype'
+
+the value is: a dictionary where
+
+the key is: title
+
+the value is: priority number
+
+meaning it inserts all the titles and thier priority number,
+that are connected to this type and subtype as key:value pairs 
+
+It iterates over the new priority rules map, and try to find a match.
 
 The match is done first to 'type' and 'subtype',then try to match the titles.
 
@@ -35,7 +47,7 @@ The list size is the amount of priority levels within the priority rule map (mea
 
 Each element of the list (meaning priority level) contains a dictionary of all the alerts that were match for this oriority level, with the key being an alert ID and the value the timestamp
 
-The next step was to sort the timestamps, in order to collect the most recent - highest priority - alerts.
+The next step was to sort the timestamps, in order to collect the most recent - the highest priority - alerts.
 In order to do so, a ciso8601 was used to parse the timestamp (ciso8601 seems to be the fastest way to parse a timestamp).
 Then it converts the timestamp to unix time for fast comparison.
 
