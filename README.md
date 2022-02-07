@@ -97,13 +97,11 @@ $ pip install ciso8601
 ### Executing program
 
 * run the main.py main function:
-```
   
-  ciso8601 install
-  ```console
+```console
 $ python3 main.py
   
-  ```
+```
 
 ## Authors
 
